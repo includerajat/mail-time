@@ -24,8 +24,8 @@ const mailSchema = new Schema({
   },
   howManyTime: {
     type: Number,
-    min: 1,
-    max: 3,
+    min: 0,
+    max: 5,
     required: true,
   },
   owner: {

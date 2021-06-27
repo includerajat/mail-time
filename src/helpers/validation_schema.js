@@ -16,7 +16,7 @@ const mailSchema = Joi.object({
   subject: Joi.string().required(),
   body: Joi.string().required(),
   schedule: Joi.required(),
-  howManyTime: Joi.number().integer().min(0).max(3).required(),
+  howManyTime: Joi.number().integer().min(0).max(5).required(),
   startTime: Joi.date().required(),
 });
 

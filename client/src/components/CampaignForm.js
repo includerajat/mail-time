@@ -177,7 +177,7 @@ const CampaignForm = (props) => {
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="howMany">
-            How many emails do you want to send ?
+            How many emails do you want to send ? (0 - 5)
           </label>
           <input
             className="form-control"
@@ -185,11 +185,13 @@ const CampaignForm = (props) => {
             onChange={(e) => sethowMany(e.target.value)}
             type="number"
             id="howMany"
+            min={0}
+            max={5}
           />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="startTime">
-            Start Time
+            Start Time (When Campaign Start)
           </label>
           <input
             className="form-control"

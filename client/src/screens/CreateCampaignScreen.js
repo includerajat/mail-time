@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { loadSchedules, createCampaign } from "../actions/mail.action";
 import { useSelector } from "react-redux";
 import CampaignForm from "../components/CampaignForm";
+import { useHistory } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 
 const CreateCampaignScreen = () => {
@@ -22,6 +23,7 @@ const CreateCampaignScreen = () => {
   const [second, setsecond] = useState(0);
 
   const { auth } = useSelector((state) => ({ ...state }));
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
@@ -55,6 +57,7 @@ const CreateCampaignScreen = () => {
       const { accessToken } = auth;
       const res = await createCampaign(data, accessToken);
       setLoading(false);
+      history.push("/myCampaign");
       console.log(res.data);
     } catch (error) {
       console.log(error);
