@@ -6,6 +6,7 @@ import { Navbar, Container } from "react-bootstrap";
 import { logout } from "../actions/auth.action";
 
 const Header = () => {
+  process.env.REACT_APP_SURVEY_API = process.env.REACT_APP_SURVEY_API || "/api";
   const { auth } = useSelector((state) => ({ ...state }));
   const { user } = auth;
   const dispatch = useDispatch();

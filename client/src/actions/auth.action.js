@@ -1,6 +1,8 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
+process.env.REACT_APP_SURVEY_API = process.env.REACT_APP_SURVEY_API || "/api";
+
 export const signup = async (data) =>
   await axios.post(`${process.env.REACT_APP_SURVEY_API}/signup`, data);
 
