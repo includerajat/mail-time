@@ -6,7 +6,7 @@ import { Navbar, Container } from "react-bootstrap";
 import { logout } from "../actions/auth.action";
 
 const Header = () => {
-  process.env.REACT_APP_SURVEY_API = process.env.REACT_APP_SURVEY_API || "/api";
+  // process.env.REACT_APP_SURVEY_API = process.env.REACT_APP_SURVEY_API || "/api";
   const { auth } = useSelector((state) => ({ ...state }));
   const { user } = auth;
   const dispatch = useDispatch();
@@ -33,9 +33,7 @@ const Header = () => {
           </div>
           <div className="mx-3">
             <Navbar.Text>
-              <a href={`${process.env.REACT_APP_SURVEY_API}/auth/google`}>
-                Login By Google
-              </a>
+              <a href={`/api/auth/google`}>Login By Google</a>
             </Navbar.Text>
           </div>
           <div className="mx-3">

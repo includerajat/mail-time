@@ -1,7 +1,14 @@
 import React from "react";
+import "./Loading.css";
 
 function Loading() {
-  return <div>Loading ...</div>;
+  return (
+    <div className="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 }
 
 export default Loading;

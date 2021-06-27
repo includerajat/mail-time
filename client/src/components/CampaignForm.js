@@ -93,41 +93,73 @@ const CampaignForm = (props) => {
               })}
           </select>
         </div>
-        <div>
+        <div className="mb-3">
           {selectedScheduleType.second && (
-            <input
-              value={second}
-              onChange={(e) => setsecond(e.target.value)}
-              type="number"
-            />
+            <>
+              <label className="form-label">Seconds (1 - 59)</label>
+              <input
+                className="form-control"
+                value={second}
+                onChange={(e) => setsecond(e.target.value)}
+                type="number"
+                min={1}
+                max={59}
+              />
+            </>
           )}
           {selectedScheduleType.day && (
-            <input
-              value={day}
-              onChange={(e) => setday(e.target.value)}
-              type="number"
-            />
+            <>
+              <label className="form-label">
+                Day (0(sunday) - 6(saturday))
+              </label>
+
+              <input
+                className="form-control"
+                value={day}
+                onChange={(e) => setday(e.target.value)}
+                type="number"
+                min={0}
+                max={6}
+              />
+            </>
           )}
           {selectedScheduleType.date && (
-            <input
-              value={date}
-              onChange={(e) => setdate(e.target.value)}
-              type="number"
-            />
+            <>
+              <label className="form-label">Date (1 - 31)</label>
+              <input
+                className="form-control"
+                value={date}
+                onChange={(e) => setdate(e.target.value)}
+                type="number"
+                min={1}
+                max={31}
+              />
+            </>
           )}
           {selectedScheduleType.time && (
-            <input
-              value={time}
-              onChange={(e) => settime(e.target.value)}
-              type="number"
-            />
+            <>
+              <label className="form-label">Select Time</label>
+              <input
+                className="form-control"
+                value={time}
+                onChange={(e) => settime(e.target.value)}
+                type="time"
+              />
+            </>
           )}
           {selectedScheduleType.month && (
-            <input
-              value={month}
-              onChange={(e) => setmonth(e.target.value)}
-              type="number"
-            />
+            <>
+              <label className="form-label">Month (1 - 12)</label>
+
+              <input
+                className="form-control"
+                value={month}
+                onChange={(e) => setmonth(e.target.value)}
+                type="number"
+                min={1}
+                max={12}
+              />
+            </>
           )}
         </div>
         <div className="mb-3">

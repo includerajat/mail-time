@@ -45,7 +45,11 @@ const SignInScreen = (props) => {
         <Loading />
       ) : (
         <>
-          {error && <p>{error}</p>}
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          )}
           <UserForm
             title="Sign In"
             username={username}

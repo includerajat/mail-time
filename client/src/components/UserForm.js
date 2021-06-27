@@ -5,25 +5,33 @@ const UserForm = (props) => {
     <div>
       <h1>{title}</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username</label>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="username">
+            Username
+          </label>
           <input
+            className="form-control"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
             id="username"
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="password">
+            Password
+          </label>
           <input
+            className="form-control"
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">{title}</button>
+        <button className="btn btn-primary mb-3" type="submit">
+          {title}
+        </button>
       </form>
     </div>
   );

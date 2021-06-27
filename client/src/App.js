@@ -10,6 +10,7 @@ import MyCampaignScreen from "./screens/MyCampaignScreen";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import PrivateRoute from "./components/Routes/PrivateRoute";
+import NewUserRoute from "./components/Routes/NewUserRoute";
 import Loading from "./components/Loading/Loading";
 
 import { authByGoogle, validation } from "./actions/auth.action";
@@ -68,8 +69,8 @@ function App() {
           <div>
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/signup" exact component={SignUpScreen} />
-              <Route path="/signin" exact component={SignInScreen} />
+              <NewUserRoute path="/signup" exact component={SignUpScreen} />
+              <NewUserRoute path="/signin" exact component={SignInScreen} />
               <PrivateRoute
                 path="/createCampaign"
                 exact

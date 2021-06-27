@@ -15,7 +15,7 @@ const CreateCampaignScreen = () => {
   const [startTime, setstartTime] = useState("");
   const [scheduleType, setScheduleType] = useState([]);
   const [selectedScheduleType, setselectedScheduleType] = useState({});
-  const [time, settime] = useState(0);
+  const [time, settime] = useState("00:00");
   const [day, setday] = useState(0);
   const [date, setdate] = useState(0);
   const [month, setmonth] = useState(0);
@@ -73,7 +73,11 @@ const CreateCampaignScreen = () => {
         <Loading />
       ) : (
         <>
-          {error && <p>{error}</p>}
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          )}
           <CampaignForm
             to={to}
             setTo={setTo}

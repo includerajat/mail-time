@@ -38,6 +38,10 @@ const signin = async (req, res, next) => {
     });
     if (!user)
       throw createError.NotFound("User with username is not registered");
+    if (!user.password)
+      throw createError.BadRequest(
+        "Please Login by Google , Because Your password is not set."
+      );
     const isMatch = await user.isValidPassword(result.password);
     if (!isMatch)
       throw createError.Unauthorized("Username/Password doesn't match.");
